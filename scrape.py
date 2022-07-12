@@ -3,6 +3,8 @@ import json
 import sys
 import time
 import math
+import webbrowser
+import intro
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
@@ -24,6 +26,36 @@ thingsSuspicious = [line.rstrip('\n') for line in open('thingsSuspicious.txt')]
 adlibsPeople = [line.rstrip('\n') for line in open('adlibsPeople.txt')]
 adlibsThings = [line.rstrip('\n') for line in open('adlibsThings.txt')]
 adlibsSubjects = [line.rstrip('\n') for line in open('adlibssubjects.txt')]
+
+ruinmysearchhistory = [line.rstrip('\n') for line in open('ruinmysearchhistory.txt')]
+#for the memes
+
+intro.intro()
+
+time.sleep(1)
+webbrowser.open('https://www.whatsmyua.info/')
+userAgent = input("Enter userAgent:")
+print("")
+print("0: Normal")
+print("1: Weird")
+print("2: Suspicious")
+weirdScale = input("Select your level of weird:")
+print("")
+print("0: Things")
+print("1: People")
+print("2: Subjects")
+print("3: All")
+print("4: ruinmysearchhistory.com list, because funny")
+criteria = input("Select your criteria:")
+print("")
+print("0: twitter")
+print("1: youtube")
+print("2: facebook")
+print("3: instagram")
+print("4: All")
+socialMedia = input("Select your social media:")
+
+
 
 driver = webdriver.Firefox()
 
